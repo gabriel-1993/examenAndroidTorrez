@@ -18,7 +18,6 @@ public class ListarViewModel extends AndroidViewModel {
     //mutable para el observer que captura las tareas para mostrarlas
     private MutableLiveData<ArrayList<Auto>> mLista;
 
-
     public ListarViewModel(@NonNull Application application) {
         super(application);
     }
@@ -51,13 +50,7 @@ public class ListarViewModel extends AndroidViewModel {
             }
         });
 
-        // Imprimir la lista ordenada o hacer algo con ella
-        for (Auto auto : MainActivity.autos) {
-            System.out.println(auto.getPrecio());
-        }
-
         // Establecer el valor para ser observado
         mLista.setValue(MainActivity.autos);
     }
-
 }

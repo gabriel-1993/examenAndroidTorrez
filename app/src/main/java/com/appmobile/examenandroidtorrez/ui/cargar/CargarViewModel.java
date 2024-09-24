@@ -17,6 +17,7 @@ public class CargarViewModel extends AndroidViewModel {
         super(application);
     }
 
+// mutable para mostrar msjs de error o exito en cargar auto
     public MutableLiveData<String> getmErrorMsj(){
         if (mErrorMsj == null) {
             mErrorMsj = new MutableLiveData<>();
@@ -24,6 +25,7 @@ public class CargarViewModel extends AndroidViewModel {
         return mErrorMsj;
     }
 
+    //funcion para recorrer lista autos y validar si algun item tiene la misma patente del auto que se desea agregar, retorna bool
     public boolean existePatente(String patenteIngresada) {
         for (Auto auto : MainActivity.autos) {
             if (auto.getPatente().equals(patenteIngresada)) {
@@ -33,8 +35,10 @@ public class CargarViewModel extends AndroidViewModel {
         return false;
     }
 
-
+//Si los datos capturades son correctos y la patente no es repetida , se crea una instancia nueva de Auto y se agrega a la lista de MainActivity
+    //Luego setea un texto en mutable, el observer cuando encuentra el texto de exito limpia los campos con limpiarCampos().
     public void validarAgregarAuto(String marcaIngresada, String modeloIngresado, String anioIngresado, String patenteIngresada,String combustibleIngresado, String precioIngresado) {
+
        //variable para parsear string a int
         int anio;
 

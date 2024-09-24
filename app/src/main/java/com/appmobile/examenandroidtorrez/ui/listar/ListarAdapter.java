@@ -71,6 +71,5 @@ public class ListarAdapter  extends RecyclerView.Adapter<ListarAdapter.ViewHolde
             tvCombustible = itemView.findViewById(R.id.tvCombustible);
             tvPrecio = itemView.findViewById(R.id.tvPrecio);
         }
-
     }
 }

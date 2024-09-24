@@ -55,5 +55,4 @@ public class ListarFragment extends Fragment {
         mViewModel = new ViewModelProvider(this).get(ListarViewModel.class);
         // TODO: Use the ViewModel
     }
-
 }
